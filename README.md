@@ -30,13 +30,13 @@ To run this application in your local environment, follow these steps:
 1. **Clone this repository:**
 
    ```bash
-   $ git clone https://github.com/your-username/my-react-application.git
+   $ git clone https://github.com/developGenion/weather-app-genion.git
    ```
 
 2. **Navigate to the project directory:**
 
    ```bash
-   $ cd my-react-application
+   $ cd weather-app-genion
    ```
 
 3. **Install the dependencies:**
@@ -60,7 +60,7 @@ This will launch the application in development mode. Open your browser and go t
 The file structure of the application is as follows:
 
 ```bash
-my-react-application/
+weather-app-genion/
   ├── public/
   │   ├── assets/
   │   │   ├── css/
