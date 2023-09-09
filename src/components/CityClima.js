@@ -299,16 +299,17 @@ class CiudadClima extends Component {
                       {datosCiudad && datosCiudad.list.length > 0 && (
                         <ul id="add-list" className="list-contes">
                           {datosCiudad.list.map((ciudad) => (
-                            <li key={ciudad.id} className="span-hovers">
+                            <li key={ciudad.id} className="span-hovers" 
+                              onClick={() =>
+                              this.handleSpanClick(
+                                ciudad.coord.lat,
+                                ciudad.coord.lon,
+                                ciudad.name + ", " + ciudad.sys.country
+                              )
+                            }>
                               <span
                                 className="span-widt"
-                                onClick={() =>
-                                  this.handleSpanClick(
-                                    ciudad.coord.lat,
-                                    ciudad.coord.lon,
-                                    ciudad.name + ", " + ciudad.sys.country
-                                  )
-                                }
+                               
                               >
                                 {ciudad.name}, {ciudad.sys.country}
                                 <img
