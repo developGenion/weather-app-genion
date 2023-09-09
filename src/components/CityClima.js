@@ -167,8 +167,7 @@ class CiudadClima extends Component {
     .then((response) => response.json())
     .then((result) => {
       if(result){
-
-        console.log("###")
+        console.log("History save")
       }
     })
 
@@ -177,7 +176,7 @@ class CiudadClima extends Component {
   handleSpanClick = (lat, lon, name, status=false) => {
     const _lat = Cookies.get("_lat");
     const _lon = Cookies.get("_lon");
-    fetch("http://127.0.0.1:5000/clima", {
+    fetch("http://127.0.0.1:5000/weather", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

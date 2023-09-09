@@ -14,7 +14,7 @@ class App extends Component {
       name_city: "",
       weatherDailyData: null,
       weatherHoursData: null,
-      isDefault: null
+      isDefault: false
     };
   }
 

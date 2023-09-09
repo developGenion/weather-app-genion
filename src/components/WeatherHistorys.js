@@ -11,24 +11,24 @@ class WeatherHistory extends Component {
     super(props);
     this.state = {
       weatherHistory: null,
-      isDefault: true
+      isDefault: null
     };
   }
-
-  async componentDidUpdate(prevProps) {
-    console.log(prevProps.isDefault)
+  
+  async componentWillReceiveProps(nextProps) {
     const existingSessionId = Cookies.get("ssesion_id");
-    if (existingSessionId && prevProps.isDefault) {
-     const response = await  fetch(`http://127.0.0.1:5000/history?session=${existingSessionId}`, {
-      method: "GET",
-    })
-    console.log(response)
-    if (response.ok) {
-      const result = await response.json();
-      this.setState({ weatherHistory: result });
-    }
-  }
+    if (existingSessionId && nextProps.isDefault) {
+      const response = await  fetch(`http://127.0.0.1:5000/history?session=${existingSessionId}`, {
+       method: "GET",
+     })
+     if (response.ok) {
+       const result = await response.json();
+       this.setState({ weatherHistory: result });
+       this.render()
+     }
+   }
 }
+
 
   getCurrentDate = (date) => {
     const currentDate = new Date(date);
@@ -99,11 +99,30 @@ class WeatherHistory extends Component {
       slidesToScroll: 1, // Número de contenedores para desplazarse a la vez
       responsive: [
         {
+          breakpoint: 1300,
+          settings: {
+            slidesToShow: 3, // Cambia a 1 contenedor visible en pantallas pequeñas
+          },
+        },
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 3, // Cambia a 1 contenedor visible en pantallas pequeñas
+          },
+        },
+        {
+          breakpoint: 995,
+          settings: {
+            slidesToShow: 2, // Cambia a 1 contenedor visible en pantallas pequeñas
+          },
+        },
+        {
           breakpoint: 768,
           settings: {
             slidesToShow: 1, // Cambia a 1 contenedor visible en pantallas pequeñas
           },
         },
+        
       ],
     };
     return (

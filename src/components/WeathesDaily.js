@@ -27,11 +27,30 @@ class WeatherDaily extends Component {
       slidesToScroll: 1, // Número de contenedores para desplazarse a la vez
       responsive: [
         {
+          breakpoint: 1300,
+          settings: {
+            slidesToShow: 5, // Cambia a 1 contenedor visible en pantallas pequeñas
+          },
+        },
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 4, // Cambia a 1 contenedor visible en pantallas pequeñas
+          },
+        },
+        {
+          breakpoint: 995,
+          settings: {
+            slidesToShow: 3, // Cambia a 1 contenedor visible en pantallas pequeñas
+          },
+        },
+        {
           breakpoint: 768,
           settings: {
             slidesToShow: 1, // Cambia a 1 contenedor visible en pantallas pequeñas
           },
         },
+        
       ],
     };
 
