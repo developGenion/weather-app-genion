@@ -20,12 +20,15 @@ class CiudadClima extends Component {
       favorite: false,
     };
   }
+
   componentWillMount() {
     this.verificarHoraYActivarModoOscuro();
+    // Check if a user session is stored in cookies
     const existingSessionId = Cookies.get("ssesion_id");
     if (existingSessionId) {
       this.SessionUser(existingSessionId)
     }else{
+      // Get the user's IP address and generate a unique session ID
       axios.get('https://api.ipify.org?format=json')
       .then(async (response) => {
         const ipAddress = response.data.ip;
@@ -39,8 +42,8 @@ class CiudadClima extends Component {
       });      
     } 
   }
- 
 
+  // Create a user session ID
   async SessionUser(id){
     const formdataUser = {
       ssesion_id: id
@@ -69,16 +72,15 @@ class CiudadClima extends Component {
           this.state.favorite = true
         }
        
-      }else{
-        console.log("3")
       }
 
     }else{
-      console.log("mal")
+      console.log("Not user")
     }
 
   }
-
+  
+  // Check if it's nighttime and switch to dark mode
   verificarHoraYActivarModoOscuro = () => {
     const horaActual = new Date().getHours();
     if (horaActual >= 18) {
@@ -88,6 +90,7 @@ class CiudadClima extends Component {
     }
   };
 
+  // Get the current date in Day, Month format
   getCurrentDate = () => {
     const currentDate = new Date();
     const day = currentDate.getDate();
@@ -95,6 +98,7 @@ class CiudadClima extends Component {
     const formattedDay = day < 10 ? `0${day}` : day;
     return `${formattedDay} ${month}`;
   };
+
   handleInputChange = (event) => {
     if (this.inputTimer) {
       clearTimeout(this.inputTimer);
@@ -133,15 +137,17 @@ class CiudadClima extends Component {
       });
   };
 
+  // Get the current date and time in ISO8601 format
   obtenerFechaHoraActual() {
     const fechaHoraActual = new Date();
-    return fechaHoraActual.toISOString(); // Devuelve la fecha y hora en formato ISO8601
+    return fechaHoraActual.toISOString(); 
   }
+
   updateIsDataFetched = (value) => {
     this.setState({ isDataFetched: value });
   };
 
-
+  // Save search history for a city
   historySave(info, name){
     const date_time = this.obtenerFechaHoraActual()
     const ssesion = Cookies.get("ssesion_id");
@@ -212,7 +218,8 @@ class CiudadClima extends Component {
 
       });
   };
-
+  
+  // Add a city as a favorite
   addFvorite(lat, lon, name=null){
     if (this.state.selected == false && this.state.favorite) {  //"If the field I select is not the favorite and there is a favorite saved.
       let text = "Do you want to update your favorite?";

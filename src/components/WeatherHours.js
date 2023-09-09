@@ -3,6 +3,7 @@ import Slider from "react-slick";
 
 
 class WeatherHours extends Component {
+  // Function to format a Unix timestamp into a readable hour format
   formatHour(unixTimestamp) {
     const currentDate = new Date();
     const inputDate = new Date(unixTimestamp * 1000);
@@ -24,36 +25,35 @@ class WeatherHours extends Component {
     return `${formattedHours}:${formattedMinutes} ${ampm}`;
   }
 
-
   render() {
     const { weatherHoursData } = this.props;
     const settings = {
-      infinite: true, // Hace que el slider sea infinito
-      slidesToShow: 6, // Número de contenedores visibles a la vez
-      slidesToScroll: 1, // Número de contenedores para desplazarse a la vez
+      infinite: true, // Makes the slider infinite
+      slidesToShow: 6, // Number of visible containers at once
+      slidesToScroll: 1, // Number of visible containers at once
       responsive: [
         {
           breakpoint: 1300,
           settings: {
-            slidesToShow: 5, // Cambia a 1 contenedor visible en pantallas pequeñas
+            slidesToShow: 5,
           },
         },
         {
           breakpoint: 1200,
           settings: {
-            slidesToShow: 4, // Cambia a 1 contenedor visible en pantallas pequeñas
+            slidesToShow: 4,
           },
         },
         {
           breakpoint: 995,
           settings: {
-            slidesToShow: 3, // Cambia a 1 contenedor visible en pantallas pequeñas
+            slidesToShow: 3,
           },
         },
         {
           breakpoint: 768,
           settings: {
-            slidesToShow: 1, // Cambia a 1 contenedor visible en pantallas pequeñas
+            slidesToShow: 1,
           },
         },
         

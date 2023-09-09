@@ -3443,3 +3443,14 @@ margin-top: 18px;
     margin-left: 195px;
 }
 }
+
+#icon-sonIs{
+  margin-left: 0px !important;
+}
+
+@media (max-width: 365px){
+  .slick-slide img {
+      margin-left: 113px;
+  }
+  #
+}

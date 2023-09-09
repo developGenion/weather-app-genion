@@ -15,9 +15,12 @@ class WeatherHistory extends Component {
     };
   }
   
+  // Lifecycle method that triggers when receiving new props
   async componentWillReceiveProps(nextProps) {
+    // Check if a session ID exists in cookies and the component receives a signal to load data
     const existingSessionId = Cookies.get("ssesion_id");
     if (existingSessionId && nextProps.isDefault) {
+      // Fetch weather history data based on the session ID
       const response = await  fetch(`http://127.0.0.1:5000/history?session=${existingSessionId}`, {
        method: "GET",
      })
@@ -27,9 +30,9 @@ class WeatherHistory extends Component {
        this.render()
      }
    }
-}
+  }
 
-
+  // Function to format a date into a custom string format
   getCurrentDate = (date) => {
     const currentDate = new Date(date);
     const day = currentDate.getDate();
@@ -38,7 +41,7 @@ class WeatherHistory extends Component {
     return `${formattedDay} ${month}`;
   };
 
-
+  // Function to format a date into a 12-hour time format (AM/PM)
   getCurrentHours = (date) => {
     const fecha = new Date(date);
     // Utiliza date-fns para formatear la hora en formato de 12 horas (AM/PM)
@@ -46,7 +49,7 @@ class WeatherHistory extends Component {
     return horaFormateada
   };
   
-  
+  // Function to obtain an icon based on weather code
   obtenerIcono(clima) {
     const today = clima.substring(2);
     switch (today) {
@@ -54,7 +57,7 @@ class WeatherHistory extends Component {
         const code = clima.substring(0, 2);
         switch (code) {
           case "01":
-            return <img src="./assets/media/icon/sun-icon-big.png" alt="" />;
+            return <img src="./assets/media/icon/sun-icon-big.png" alt="" id="icon-sonIs" />;
           case "02":
             return <i className="fas fa-cloud-sun" />
           case "03":
@@ -66,7 +69,9 @@ class WeatherHistory extends Component {
           case "10":
             return <i class="fad fa-cloud-sun-rain" />
           case "11":
-            return <i class="fa-solid fa-cloud-bolt" />
+            return <i class="fad fa-cloud-bolt" />
+          case "13":
+              return <i class="fas fa-snowflake" />
         }
       case "n":
         const code_n = clima.substring(0, 2);
@@ -74,7 +79,7 @@ class WeatherHistory extends Component {
           case "01":
             return <i className="fas fa-moon" />;
           case "02":
-            return <i class="fa-solid fa-cloud-moon" />;
+            return <i class="fad fa-cloud-moon" />;
           case "03":
             return <i class="fad fa-cloud" />
           case "04":
@@ -84,42 +89,48 @@ class WeatherHistory extends Component {
           case "10":
             return <i class="fad fa-cloud-moon-rain" />
           case "11":
-            return <i class="fa-solid fa-cloud-bolt" />
+            return <i class="fad fa-cloud-bolt" />
+          case "13":
+              return <i class="fad fa-snowflake" />
+  
+
+           
         }
         return <i className="fad fa-cloud" />;
       default:
         return null;
     }
   }
+  
   render() {
     const { weatherHistory } = this.state
     const settings = {
-      infinite: false, // Hace que el slider sea infinito
-      slidesToShow: 4, // Número de contenedores visibles a la vez
-      slidesToScroll: 1, // Número de contenedores para desplazarse a la vez
+      infinite: false, // Makes the slider non-infinite
+      slidesToShow: 4, // Number of containers visible at once
+      slidesToScroll: 1, // Number of containers to scroll at once
       responsive: [
         {
           breakpoint: 1300,
           settings: {
-            slidesToShow: 3, // Cambia a 1 contenedor visible en pantallas pequeñas
+            slidesToShow: 3, 
           },
         },
         {
           breakpoint: 1200,
           settings: {
-            slidesToShow: 3, // Cambia a 1 contenedor visible en pantallas pequeñas
+            slidesToShow: 3, 
           },
         },
         {
           breakpoint: 995,
           settings: {
-            slidesToShow: 2, // Cambia a 1 contenedor visible en pantallas pequeñas
+            slidesToShow: 2, 
           },
         },
         {
           breakpoint: 768,
           settings: {
-            slidesToShow: 1, // Cambia a 1 contenedor visible en pantallas pequeñas
+            slidesToShow: 1,
           },
         },
         

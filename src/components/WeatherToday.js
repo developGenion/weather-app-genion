@@ -7,6 +7,7 @@ import {
 } from "chart.js";
 import { Pie } from "react-chartjs-2";
 
+// Register required Chart.js components
 ChartJS.register(
   ArcElement,
   Tooltip,
@@ -20,6 +21,7 @@ class WeatherToday extends Component {
       currentDate: this.getCurrentDate(),
     };
   }
+  // Function to format a Unix timestamp into a readable hour format
   getHourWithNumber(unixTimestamp) {
     const date = new Date(unixTimestamp * 1000);
     const hours = date.getHours();
@@ -28,7 +30,8 @@ class WeatherToday extends Component {
     const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
     return `${formattedHours}.${formattedMinutes}`;
   }
-
+ 
+  // Function to get the current time with number format
   getDayWithNumber() {
     const date = new Date();
     const hours = date.getHours();
@@ -38,7 +41,7 @@ class WeatherToday extends Component {
     return `${formattedHours}.${formattedMinutes}`;
   }
 
-
+  // Function to format a Unix timestamp into a readable hour format with AM/PM
   getHourWithAMPM(unixTimestamp) {
     const date = new Date(unixTimestamp * 1000);
     const hours = date.getHours();
@@ -48,8 +51,8 @@ class WeatherToday extends Component {
     const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
     return `${formattedHours}:${formattedMinutes} ${ampm}`;
   }
-
-
+ 
+  // Function to get the current date in a formatted string
   getCurrentDate = () => {
     const currentDate = new Date();
     const day = currentDate.getDate();
@@ -77,7 +80,7 @@ class WeatherToday extends Component {
       labels: ["Current Time", "Sunset Time"],
       datasets: [
         {
-          data: [time_day, sunsetTime], // Aquí actualizas los datos
+          data: [time_day, sunsetTime],
           backgroundColor: ["#FCA542", "#F0F5FF"],
           borderColor: "#FCA542",
           borderWidth: 1,
@@ -87,7 +90,7 @@ class WeatherToday extends Component {
     const options = {
       elements: {
         arc: {
-          borderWidth: 0, // Configura el ancho del borde del elemento arc según tus necesidades
+          borderWidth: 0, 
         },
       },
       rotation: -90,
@@ -97,7 +100,7 @@ class WeatherToday extends Component {
       plugins: {
       
         legend: {
-          display: false // Establece display en false para ocultar los labels
+          display: false
         }
       },
     };
