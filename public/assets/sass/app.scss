@@ -1,0 +1,122 @@
+/*---------------------------------------------"
+Template Name: Thunder Pro
+Description: Thunder Pro Weather Forcast And News Template
+Version: 1.0.0
+
+===============================================   
+STYLE SHEET INDEXING
+|
+|___ Fonts
+|___ Variables
+|___ Reset Styles
+|___ Responsive
+|___ Spacing
+|___ Helper Classes
+|___ Buttons
+|___ Headings
+|___ Layout Styles
+|___ END STYLE SHEET INDEXING
+
+--------------------------------------------*/
+
+/*-------------------------
+    Fonts
+-------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/*-------------------------
+    Variables
+-------------------------*/
+$accent-1: #FFAD51;
+$gradient: linear-gradient(90deg, #FFAD51 0%, #FF9112 100%);
+$font-primary: 'Poppins', sans-serif;
+$font-awesome: "Font Awesome 5 Pro";
+$transition: all 0.5s ease-in-out;
+$black: #000000;
+$black-1: #252222;
+$white: #FFFFFF;
+$white-1: #F0F5FF;
+$gray: #898E8F;
+$font-143: 143px;
+$font-119: 119px;
+$font-95: 95px;
+$font-83: 83px;
+$font-69: 69px;
+$font-57:57px;
+$font-48:48px;
+$font-40:40px;
+$font-33:33px;
+$font-28:28px;
+$font-23:23px;
+$font-19:19px;
+$font-16:16px;
+$font-13:13px;
+$font-11:11px;
+ 
+/*-------------------------
+    Responsive
+-------------------------*/
+@import "helpers/mixins";
+
+/*-------------------------
+    Reset Styles
+-------------------------*/
+@import "basic/basic";
+ 
+/*-------------------------
+    Spacing
+-------------------------*/
+@import "helpers/spacing";
+
+/*-------------------------
+    Helper Classes
+-------------------------*/
+@import "helpers/classes";
+
+/*-------------------------
+  Buttons
+-------------------------*/
+@import "elements/buttons";
+
+/*-------------------------
+  Headings
+-------------------------*/
+@import "elements/heading";
+
+/*-------------------------
+  Preloader Styles
+-------------------------*/
+@import "layout/preloader";
+
+/*-------------------------
+  Color Mode Styles
+-------------------------*/
+@import "layout/colorMode";
+
+ 
+@import "layout/header";
+
+@import "layout/footer";
+
+@import "layout/hero-banner";
+
+@import "layout/inner-banner";
+
+@import "layout/slider";
+
+@import "layout/global";
+
+@import "layout/blog";
+
+@import "layout/video";
+
+@import "layout/subscribe";
+
+@import "layout/gallery";
+
+@import "layout/map";
+
+@import "layout/contact";
+
+
+

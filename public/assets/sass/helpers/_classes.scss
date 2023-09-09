@@ -1,0 +1,348 @@
+.color-primary{
+    color:$accent-1;
+}
+.bg-primary{
+    background-color:$accent-1 !important;
+}
+.color-dark{
+    color:$black;
+}
+.bg-dark{
+    background-color:$black;
+}
+.color-dark-2{
+    color:$black-1;
+}
+.bg-dark-2{
+    background-color:$black-1;
+}
+.color-white{
+    color:$white; 
+}
+.bg-white{
+    background-color: $white !important;
+}
+.color-white-1{
+    color:$white-1; 
+}
+.bg-white-1{
+    background-color: $white-1 !important;
+}
+.color-gray{
+    color:$gray;
+}
+.bg-gray{
+    background-color: $gray;
+}
+.primary-hover{
+    &:hover{
+        color: $black-1;
+    }
+}
+.secondery-hover{
+    &:hover{
+        color: $white;
+    }
+}
+.dark{
+    .bg-dark{
+        background-color:$white;
+    }
+    .color-dark{
+        color:$white;
+    }
+    .bg-dark-2{
+        background-color:$white-1;
+    }
+    .color-dark-2{
+        color:$white-1;
+    }
+    .bg-white{
+        background-color: $black!important;
+    }
+    .color-white{
+        color:$black;
+    }
+    .bg-white-1{
+        background-color: $black!important;
+    }
+    .color-white-1{
+        color: $black-1;
+    }
+    .color-gray{
+        color: $white;
+    }
+}
+
+
+.fs-143{
+    font-size:$font-143;
+    @include media-query(1200px) {
+        font-size: 132px;
+    }
+    @include media-query(768px) {
+        font-size: 118px;
+    }
+    @include media-query(490px) {
+        font-size: 98px;
+    }
+}
+.fs-119{
+    font-size:$font-119;
+    @include media-query(1200px) {
+        font-size: 98px;
+    }
+    @include media-query(992px) {
+        font-size: 78px;
+    }
+    @include media-query(762px) {
+        font-size: 58px;
+    }
+    @include media-query(580px) {
+        font-size: 48px;
+    }
+    @include media-query(490px) {
+        font-size: 38px;
+    }
+}
+.fs-95{
+    font-size:$font-95;
+    @include media-query(1200px) {
+        font-size: 78px;
+    }
+    @include media-query(768px) {
+        font-size: 58px;
+    }
+    @include media-query(768px) {
+        font-size: 48px;
+    }
+    @include media-query(490px) {
+        font-size: 38px;
+    }
+}
+.fs-83{
+    font-size:$font-83;
+    @include media-query(1200px) {
+        font-size: 72px;
+    }
+    @include media-query(768px) {
+        font-size: 58px;
+    }
+    @include media-query(768px) {
+        font-size: 48px;
+    }
+    @include media-query(490px) {
+        font-size: 38px;
+    }
+}
+.fs-69{
+    font-size:$font-69;
+    @include media-query(1200px) {
+        font-size: 52px;
+    }
+    @include media-query(900px) {
+        font-size: 48px;
+    }
+    @include media-query(490px) {
+        font-size: 38px;
+    }
+}
+.fs-57{
+    font-size:$font-57;
+    @include media-query(1200px) {
+        font-size: 44px;
+    }
+    @include media-query(768px) {
+        font-size: 38px;
+    }
+    @include media-query(490px) {
+        font-size: 32px;
+    }
+}
+.fs-48{
+    font-size:$font-48;
+    @include media-query(1250px) {
+        font-size: 38px;
+    }
+    @include media-query(768px) {
+        font-size: 28px;
+    }
+    @include media-query(490px) {
+        font-size: 23px;
+    }
+}
+.fs-40{
+    font-size:$font-40;
+    @include media-query(1250px) {
+        font-size: 32px;
+    }
+    @include media-query(768px) {
+        font-size: 28px;
+    }
+    @include media-query(490px) {
+        font-size: 23px;
+    }
+}
+.fs-33{
+    font-size:$font-33;
+    @include media-query(1200px) {
+        font-size: 26px;
+    }
+    @include media-query(490px) {
+        font-size: 18px;
+    }
+}
+.fs-28{
+    font-size:$font-28;
+    @include media-query(992px) {
+        font-size: 21px;
+    }
+    @include media-query(580px) {
+        font-size: 18px;
+    }
+}
+.fs-23{
+    font-size:$font-23;
+    @include media-query(490px) {
+        font-size: 16px;
+    }
+}
+.fs-19{
+    font-size:$font-19;
+    @include media-query(490px) {
+        font-size: 16px;
+    }
+}
+.fs-16{
+    font-size:$font-16;
+    @include media-query(490px) {
+        font-size: 14px;
+    }
+}
+.fs-13{
+    font-size:$font-13;
+}
+.fs-11{
+    font-size:$font-11;
+}
+.fw-3{
+    font-weight: 300;
+}
+.fw-4{
+    font-weight: 400;
+}
+.fw-5{
+    font-weight: 500;
+}
+.fw-6{
+    font-weight: 600;
+}
+.fw-7{
+    font-weight: 700;
+}
+.lh-100{
+    line-height:100%;
+}
+.lh-110{
+    line-height: 110%;
+}
+.lh-120{
+    line-height: 120%;
+}
+.lh-130{
+    line-height: 130%;
+}
+.lh-140{
+    line-height: 140%;
+}
+.lh-150{
+    line-height: 150%;
+}
+.lh-160{
+    line-height: 160%;
+}
+.ls-1{
+    letter-spacing: -0.01em;
+}
+.ls-0{
+    letter-spacing: -0.00em;
+}
+.ls-2{
+    letter-spacing: 0.02em;
+}
+.ls-3{
+    letter-spacing: -0.03em;
+}
+.ls-4{
+    letter-spacing: -0.04em;
+}
+.ls-5{
+    letter-spacing: 0.005em;
+}
+.hover-animation{
+    transition: $transition;
+    &:hover{
+        transform: translateY(-10px);
+    }
+}
+.transition{
+    transition: $transition;
+}
+.w-150{
+    width: 150px;
+    @include media-query(768px) {
+        width: 100%;
+    }
+
+}
+.h-220{
+    height: 220px;
+}
+.mt-30-m{
+    @include media-query(900px) {
+       margin-top: 30px;
+     }
+}
+.mt-30-sm{
+    @include media-query(490px) {
+       margin-top: 30px;
+     }
+}
+.br-25{
+    border-radius: 25px;
+}
+.br-15{
+    border-radius: 15px;
+}
+.border-bottom{
+    border-bottom: 1px solid $black-1!important;
+}
+.social-icon{
+    li{
+        a{
+            i{
+                color: $black;
+            }
+            &:hover{
+                i{  
+                    color: $accent-1;
+                }
+            }
+        }
+    }
+}
+.border-white{
+    border: 1px solid $white;
+}
+.radius-20{
+    border-radius: 20px;
+}
+.radius-10{
+    border-radius: 10px;
+}
+.line{
+    width: 100%;
+    height: 1px;
+    background: rgba(137, 142, 143, 0.5);
+    margin: 50px 0; 
+}

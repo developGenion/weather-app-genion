@@ -1,0 +1,48 @@
+.back-to-top {
+    position: fixed;
+    bottom: 0px;
+    right: 20px;
+    display: block;
+    width: 150px;
+    height: 150px;
+    line-height: 50px;
+    font-size: 100px;
+    padding: 20px 0;
+    background: $accent-1;
+    color: $white;
+    text-align: center;
+    opacity: 0;
+    text-decoration: none;
+    border-radius: 50%;
+    -webkit-transform: scale(0.3);
+    -ms-transform: scale(0.3);
+    transform: scale(0.3);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+
+    &.show {
+        opacity: 1;
+    }
+
+    @include media-query(490px) {
+        right: -20px;
+        bottom: -20px;
+    }
+}
+.weather-btn{
+    padding: 20px 70px;
+    background: linear-gradient(90deg, #FFAD51 0%, #FF9112 100%);
+    border-radius: 8px;
+    color: $white;
+    font-weight: 500;
+    font-size: 19px;
+    transition: $transition;
+    &:hover{
+        transition: $transition;
+        // border: 1px solid $accent-1!important;
+        background: $white-1;
+        color: #FF9112;
+    }
+}
